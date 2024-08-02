@@ -1,0 +1,1449 @@
+ <head>
+        <meta charset="UTF-8">
+        <link rel="icon" type="image/svg" href="./img/favicon.svg">
+        <title>Ressources LGBT mondiales</title>
+        <style>
+.readable-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 90%;
+    margin: auto;
+    
+}
+        .readable-text {
+            max-width: 120ch;
+            margin: auto;
+        }
+        .flexbox {
+            display: flex;
+            justify-content: space-between;
+        }
+        .box2 {
+            width: 50%;
+        }
+        .put-left {
+            padding-right: 30%;
+        }
+        .separator {
+            width: 100%; 
+            height: 1px; 
+            background-color: #f8f8f8;
+        }
+        .separator-foot {
+            width: 100%;
+            
+            height: 0.3em; 
+            background-color: #f8f8f8;
+        }
+        .sidebar {
+            height: 100%;
+            width: 20%;
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+            border-right-style: solid;
+            border-width: 1px;
+            border-color: #161616;
+            overflow-y: auto;
+        }
+        .sidebar ul {
+            list-style: none; 
+            margin: 1em 0em; 
+            padding: 0px;
+        }
+        .sidebar li {
+            border-bottom-style: solid;
+            border-width: 1px;
+            padding: 0.5em 2em;
+            letter-spacing: 0.05em;
+        }
+        .highlighted {
+            background-color: #fde3ab;
+            color: #161616;
+        }
+        .link-img {
+            height: 1.2rem;
+            margin: 0em 0.3em;
+            padding: 0em 0em;
+            cursor: pointer;
+        }
+        .link-img-p {
+            margin: 0%;
+            padding: 0%;
+            display: none;
+            font-size: 0.5em;
+            position: relative;
+            transform: translate(-90%, 100%);
+            z-index: 10;
+        }
+        h2 {
+            margin-top: 1.5em;
+        }
+        h3 {
+            margin-top: 1.3em;
+        }
+        @media (max-aspect-ratio: 1/1) {
+            .readable-div {
+                margin-left: 5%;
+            }
+            .flexbox {
+                flex-direction: column;
+                align-items: center;
+            }
+            .box2 {
+                display: block;
+                width: 80%;
+                margin: auto;
+            }
+            .separator-foot {
+                width: 100%;
+                margin-left: 0%;
+            }
+            .put-left {
+                padding-right: 0%;
+            }
+            .sidebar {
+                display: none;
+            }
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #161616;
+                color: #f8f8f8;
+            }
+            a:link {
+                color: #75aaff;       
+                text-decoration: none;
+            }
+            a:visited {
+                color: #99a4ff;       
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .separator {
+                background-color: #f8f8f8;
+            }
+            .separator-foot {
+                background-color: #f8f8f8;
+            }
+            .sidebar {
+                border-color: #f8f8f8;
+            }
+            .sidebar a {
+                color: #f8f8f8;
+            }
+            .sidebar li {
+                border-color: #f8f8f8;
+                box-shadow: inset 0 0 1em #1c1c1c;
+            }
+            .sidebar li:hover {
+                text-decoration: underline;
+                font-weight: 600;
+                letter-spacing: 0.01em;
+            }
+            .highlighted {
+                background-color: #fde3ab;
+                color: #161616;
+            }
+        }
+        @media (prefers-color-scheme: light) {
+            body {
+                background-color: #f8f8f8;
+                color: #161616;
+            }
+            a:link {
+                color: #2660b4;       
+                text-decoration: none;
+            }
+            a:visited {
+                color: #593e9c;       
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            .separator {
+                background-color: #161616;
+            }
+            .separator-foot {
+                background-color: #161616;
+            }
+            .sidebar {
+                border-color: #161616;
+            }
+            .sidebar a {
+                color: #161616;
+            }
+            .sidebar li {
+                border-color: #161616;
+                box-shadow: inset 0 0 1em #f5f5f5;
+            }
+            .sidebar li:hover {
+                text-decoration: underline;
+                font-weight: 600;
+                letter-spacing: 0.01em;
+            }
+            .highlighted {
+                background-color: #fde3ab;
+                color: #161616;
+            }
+        }
+        </style>
+        <script>
+            function make_linkable(nodes) {
+                for(let i = 0; i < nodes.length; i++) {
+                    const elem = nodes[i];
+                    if (!elem.id) {continue;}
+                    const link_text = `${document.URL}#${elem.id}`
+                    const img_node = document.createElement("img");
+                    const mode = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
+                    img_node.src = `./img/link_icon_${mode}.svg`
+                    img_node.className += "link-img";
+
+                    const text_node = document.createElement("p");
+                    text_node.className += "link-img-p";
+                    text_node.textContent = "Copied!";
+                    
+                    function copy_to_clip() {
+                        navigator.clipboard.writeText(link_text);
+                        text_node.style.display = 'inline-block';
+                        setTimeout(() => text_node.style.display = 'none', 1000);
+                    }
+
+                    img_node.addEventListener('click', copy_to_clip);
+                    elem.appendChild(img_node);
+                    elem.appendChild(text_node);
+                }
+            }
+            document.addEventListener("DOMContentLoaded", function() {
+                make_linkable(document.querySelectorAll("h2"));
+            });
+        </script>
+    </head>
+    <body>
+<style>
+.important-box {
+    width: 20em; 
+    border: 1px solid; 
+    background-color: #fde3ab; 
+    color: #161616;
+}
+.important-box:hover {
+    border: 1px solid; 
+    text-decoration: underline;
+}
+.important-container {
+    width: 100%; 
+    display: flex; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+    text-align: center; 
+    margin: 2em 0em;
+}
+        @media (prefers-color-scheme: dark) { 
+            .important-box:hover {
+                background-color: #161616; 
+                color: #f8f8f8;
+            }
+        }
+        @media (prefers-color-scheme: light) { 
+            .important-box:hover {
+                background-color: #f8f8f8; 
+                color: #161616;
+            }
+        }
+</style>
+<div class="readable-div">
+    <h1 class="readable-text">Ressources LGBT mondiales</h1>
+
+    <div class="important-container">
+        <a href="./mental_health.html#crisis_hotlines">
+            <div class="important-box">
+                <h3>Lignes de crise</h3>
+            </div>
+        </a>
+        <a href="./homelessness_and_financials.html#worldwide_housing_refugees_and_asylum">
+            <div class="important-box">
+                <h3>Refuge et asile</h3>
+            </div>
+        </a>
+        <a href="./homelessness_and_financials.html#lgbt_youth_homelessness">
+            <div class="important-box">
+                <h3>Hotline pour les jeunes en fugue</h3>
+            </div>
+        </a>
+        <a href="./lgbt_friendly_resources.html#friendly_doctors_and_therapists">
+            <div class="important-box">
+                <h3>Médecins et thérapeutes</h3>
+            </div>
+        </a>
+        <a href="./legal_help_for_lgbt.html">
+            <div class="important-box">
+                <h3>L'aide juridique</h3>
+            </div>
+        </a> 
+    </div>
+
+    <div class="readable-text put-left">
+        <h2 style="margin: 0px;"> Chapitres: </h2>
+        
+        <p style="margin-bottom: 1em; max-width: 80ch;">
+            <b>Clause de non-responsabilité:</b> <br>
+            Ces conseils sont basés sur notre expérience, nous ne sommes ni médecins, ni thérapeutes, ni avocats, ni experts. 
+            Les produits et entreprises nommés ne sont que des suggestions. 
+            S'il te plaît faire votre propre recherche en plus de l'information présentée. 
+            Consultez votre médecin pour toute question médicale.
+        </p>
+
+        <ol type="1">
+            <li>
+                <h3 style="margin: 0px;"> 
+                    <a href="./mental_health.html">
+                        Santé mentale
+                    </a>
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./mental_health.html#crisis_hotlines">
+                                Lignes de crise
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I"> 
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./mental_health.html#suicide_prevention_hotlines">
+                                    Ligne d'aide en cas de crise de suicide
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./mental_health.html#human_trafficing_hotlines">
+                                    Traite des êtres humains
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./mental_health.html#sexual_violence_hotlines">
+                                    Violence sexuelle
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./mental_health.html#domestic_violence_hotlines">
+                                    Violence domestique
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./mental_health.html#runaway_hotlines">
+                                    Hotline pour les jeunes en fugue
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./mental_health.html#trans_lifeline_hotlines">
+                                    Hotline de Trans Lifeline
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./mental_health.html#basic_coping_skills">
+                                Capacités d'adaptation
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./mental_health.html#54321_grounding_technique">
+                                    Méthode d'ancrage 54321
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./mental_health.html#anxiety_breathing_techniques">
+                                    Technique de réspiration pour l'anxiété
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./mental_health.html#journaling">
+                                    Journaling
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./homelessness_and_financials.html">
+                        Itinérance, manque de nourriture, asile et réfugiés; et besoins financiers
+                    </a>
+                </h3>
+                <ol type="A"> 
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./homelessness_and_financials.html#refugees_and_asylum">
+                                Aide pour réfugiés et demandeurs d'asile
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#refugees_and_asylum_to_us">
+                                    États-Unis
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#refugees_and_asylum_to_worldwide">
+                                    Mondiale
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./homelessness_and_financials.html#housing">
+                                Logement
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#us_housing">
+                                    États-Unis
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#lgbt_youth_homelessness">
+                                    Ligne de crise pour les jeunes en fugue
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./homelessness_and_financials.html#food">
+                                Nourriture
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#us_food">
+                                    États-Unis
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#worldwide_food">
+                                    Mondiale
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./homelessness_and_financials.html#wifi_internet_help">
+                                Wifi et accès Internet
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./homelessness_and_financials.html#health_insurances">
+                                Comment trouver l'assurance santé
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#health_insurance_tips_and_tricks">
+                                    Trucs et astuces
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#health_insurance_grants">
+                                    Subventions
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./homelessness_and_financials.html#jobs_resumes_and_skill_building">
+                                Résumés et renforcement des compétences
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#job_boards">
+                                    Sites d'emploi
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#workplace_rights">
+                                    Droits au travail
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#skill_building">
+                                    Renforcement des compétances
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#resume_help">
+                                    Aide pour CV
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#job_interviews">
+                                    Entretiens
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./homelessness_and_financials.html#college_financial_aid_options_us">
+                                    Aide financière pour l'université (États-Unis)
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./legal_help_for_lgbt.html">
+                        Aide juridique pour LGBT
+                    </a> 
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./legal_help_for_lgbt.html#legal_us">
+                                États-Unis
+                            </a> 
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./legal_help_for_lgbt.html#legal_us_name_change">
+                                Changer votre nom et votre identifiant de genre gouvernemental aux États-Unis
+                            </a> 
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./legal_help_for_lgbt.html#legal_uk">
+                                Royaume-Uni
+                            </a> 
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./legal_help_for_lgbt.html#legal_ca">
+                                Canada
+                            </a> 
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./legal_help_for_lgbt.html#legal_world">
+                                Autres pays
+                            </a> 
+                        </h4>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./politics.html">
+                        Politique et sécurité LGBT
+                    </a> 
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./politics.html#us_politics">
+                                États-Unis
+                            </a> 
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./politics.html#us_upcomming_bills">
+                                    Projets de loi actuels LGBT
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./politics.html#us_travel_guide">
+                                    Guide de voyage du gouvernement de américain pour la sécurité LGBT à l'interieur et l'extérieur de l'États-Unis
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./general_lgbt_organizations.html">
+                        Organizations LGBT
+                    </a> 
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./general_lgbt_organizations.html#lgbt_orgs_by_country">
+                                Organizations par pays
+                            </a> 
+                        </h4>
+                        <ol type="I">
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./general_lgbt_organizations.html#lgbt_orgs_by_country_us">
+                                        États-Unis
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./general_lgbt_organizations.html#lgbt_orgs_by_country_eu">
+                                        Europe
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./general_lgbt_organizations.html#lgbt_orgs_by_country_uk">
+                                        Royaume-Uni
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./general_lgbt_organizations.html#lgbt_orgs_by_country_nz">
+                                        Nouvelle-Zélande
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./general_lgbt_organizations.html#lgbt_orgs_by_country_au">
+                                        Australie
+                                    </a> 
+                                </h5>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./general_lgbt_organizations.html#lgbt_swim_and_under_wear">
+                                Entreprises de maillots de bain et sous-vêtements LGBT
+                            </a> 
+                        </h4>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./lgbt_friendly_resources.html">
+                        Trouver une ressource sympathique LGBT
+                    </a> 
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./lgbt_friendly_resources.html#finding_friendly_therapists">
+                                Trouver une thérapeute sympathique LGBT
+                            </a> 
+                        </h4>
+                        <ol type="I">
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./lgbt_friendly_resources.html#worldwide_therapists">
+                                        Mondiale
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./lgbt_friendly_resources.html#us_therapists">
+                                        États-Unis
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./lgbt_friendly_resources.html#ger_therapists">
+                                        Allemagne
+                                    </a> 
+                                </h5>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./lgbt_friendly_resources.html#finding_friendly_doctors">
+                                Trouver un médecin sympathique LGBT
+                            </a> 
+                        </h4>
+                        <ol type="I">
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./lgbt_friendly_resources.html#worldwide_doctors">
+                                        Mondiale
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./lgbt_friendly_resources.html#us_doctors">
+                                        États-Unis
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./lgbt_friendly_resources.html#uk_doctors">
+                                        Royaume-Uni
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./lgbt_friendly_resources.html#canada_doctors">
+                                        Canada
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./lgbt_friendly_resources.html#germany_doctors">
+                                        Allemagne
+                                    </a> 
+                                </h5>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./bipoc_resources.html">
+                        Ressources PANDC
+                    </a>
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./bipoc_resources.html#bipoc_educational">
+                                C'est quoi l'intersectionalité?
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./bipoc_resources.html#bipoc_us">
+                                États-Unis
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./bipoc_resources.html#bipoc_texas">
+                                    Ressources Texas
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./bipoc_resources.html#bipoc_asia_pacific">
+                                Asie et Îles du Pacifique
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./bipoc_resources.html#bipoc_canada">
+                                Canada
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./bipoc_resources.html#bipoc_mental_health">
+                                Santé mentale PANDC
+                            </a>
+                        </h4>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./trans_representation.html">
+                        Représentation transgenre
+                    </a>
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_representation.html#creators_trans_fem">
+                                Femmes trans
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_representation.html#creators_nonbinary">
+                                Non binaire
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_representation.html#creators_trans_masc">
+                                Hommes trans
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_representation.html#aydian_dowling">
+                                    Application TRACE pour suivre votre transition
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_representation.html#lgbt_books">
+                                Livres à propos LGBT
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_representation.html#books_trans_masc">
+                                    Livres à propos ou par hommes trans
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_representation.html#books_lgbt_kids">
+                                    Livres LGBT pour les enfants
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./social_transitioning.html">
+                        Transition social
+                    </a>
+                </h3> 
+                <ol type="A"> 
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./social_transitioning.html#so_you_think_your_trans">
+                                Que faire si vous pensez être trans?
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./social_transitioning.html#passing">
+                                Passer
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./social_transitioning.html#positivity_and_hope">
+                                Positivité et l'espoire
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./social_transitioning.html#vocal_training">
+                                Entraînement vocal
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I"> 
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./social_transitioning.html#vocal_training">
+                                    Liste de ressource pour l'entraînement vocal
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./social_transitioning.html#voice_tips_and_tricks">
+                                    Trucs et astuces pour la voix
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./social_transitioning.html#voice_training_apps">
+                                    Application pour l'entraînement vocal
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./social_transitioning.html#comming_out_to_family">
+                                Comment sortir du placard et soutien familial
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./social_transitioning.html#pronoun_use_and_mistakes">
+                                Comment utiliser pronoms
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./social_transitioning.html#guide_for_trans_and_info_for_allies">
+                                Groupes de soutien; ressources pour les alliés hétéro
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I"> 
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./social_transitioning.html#guide_for_trans_and_info_for_allies_ca">
+                                    Canada
+                                </a>
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./social_transitioning.html#guide_for_trans_and_info_for_allies_support">
+                                    Groupes de soutien
+                                </a>
+                            </h5>
+                        </li>
+                    </ol>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./medically_transitioning.html">
+                        Transition médicale
+                    </a> 
+                </h3> 
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./medically_transitioning.html#how_to_injections">
+                                Traitement hormonal substitutif (THS) - Comment faire une piqûre
+                            </a> 
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./medically_transitioning.html#methods_of_hrt">
+                                Différents formes de THS
+                            </a> 
+                        </h4>
+                        <ol type="I">
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./medically_transitioning.html#hrt_for_trans_masc">
+                                        Traitement hormonal masculinisant (THM) pour les hommes trans
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./medically_transitioning.html#hrt_for_trans_fem">
+                                        Traitement hormonal féminisant (THF) pour les femmes trans
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./medically_transitioning.html#hrt_for_nonbinary">
+                                        Options de THS pour les personnes non-binaires
+                                    </a> 
+                                </h5>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./medically_transitioning.html#surgery">
+                                Chirurgie
+                            </a> 
+                        </h4>
+                        <ol type="I">
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./medically_transitioning.html#affording_surgery">
+                                        Avoir les moyens de payer pour chirurgie
+                                    </a> 
+                                </h5>
+                            </li>
+                            <li>
+                                <h5 style="margin: 0px;">
+                                    <a href="./medically_transitioning.html#advice_for_surgery">
+                                        Conseils pour les consultations de chirurgie
+                                    </a> 
+                                </h5>
+                            </li>
+                        </ol>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./trans_masc_resources.html">
+                        Ressources pour les hommes trans
+                    </a>
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_masc_resources.html#general_trans_masc_resources">
+                                Général
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#ftm_myths">
+                                    Mythes à propos la transition de femme à homme
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#trans_masc_resource_guide">
+                                    Guide de ressources pour les hommes trans
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#trans_masc_hair_care">
+                                    Soins capillaires
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#trans_masc_clothes">
+                                    Guide pour les vêtements et chaussures
+                                </a> 
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_masc_resources.html#binding">
+                                Bander les seins
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#binder_size">
+                                    Trouver la propre taille pour votre binder
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#getting_binders">
+                                    Où trouver et acheter un binder
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#binding_savely">
+                                    Comment se bander sûrement
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#taping_for_binding">
+                                    Comment s'appliquer bande trans pour se bander
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#binding_taping_tips">
+                                    Comment s'appliquer bande trans - trucs et astuces
+                                </a> 
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_masc_resources.html#packing">
+                                Packers
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#bying_packers">
+                                    Où trouver et acheter un packer?
+                                </a> 
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_masc_resources.html#stp">
+                                STP
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#bying_stp">
+                                    Où trouver et acherter un STP?
+                                </a> 
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_masc_resources.html#trans_masc_surgeries">
+                                Chirurgie de réassignation sexuelle masculin et subventions
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_masc_resources.html#grants_for_trans_mask_surgeries">
+                                    Subventions pour chirurgie
+                                </a> 
+                            </h5>
+                        </li>
+                    </ol>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./periods.html">
+                        Règles
+                    </a>
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./periods.html#period_tracking_apps">
+                                Applications pour suivre ton cycle menstruel
+                            </a> 
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./periods.html#trans_masc_periods">
+                                Info sur les règles et soutien pour les personnes AFAB
+                            </a> 
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./periods.html#trans_gynecology">
+                                Toutes les personnes transgenre peut consulter un(e) obstétricien(ne)
+                            </a> 
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./periods.html#trans_fem_periods">
+                                Les femmes trans ont des règles
+                            </a> 
+                        </h4>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./pregnancy_and_parenting.html">
+                        Grosesse LGBT et élever un enfant
+                    </a>
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./pregnancy_and_parenting.html#trans_and_queer_pregnancy_resources">
+                                Ressources trans et queer pour grosesse
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./pregnancy_and_parenting.html#queer_parenting_facebook_groups">
+                                    Groupes Facebook pour grosesse et parents autour du monde
+                                </a> 
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./pregnancy_and_parenting.html#trans_masc_pregnancy">
+                                Les hommes trans peuvent-ils tomber enceinte et prévention
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./pregnancy_and_parenting.html#chestfeeding">
+                                L'alimentation de poitrine pour les homme et femmes trans
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./pregnancy_and_parenting.html#trans_women_breast_milk">
+                                    Lait de poitrine de femmes trans
+                                </a> 
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./pregnancy_and_parenting.html#trans_parenting_media">
+                                Parents trans dans les médias
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./pregnancy_and_parenting.html#raising_a_trans_kid">
+                                Éveler un enfant trans
+                            </a>
+                        </h4>
+                    </li>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./trans_fem_resources.html">
+                        Ressources pour les femmes trans
+                    </a>
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_fem_resources.html#trans_fem_guides">
+                                Guides
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_fem_resources.html#trans_fem_hair">
+                                Soins capillaires
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_fem_resources.html#trans_fem_hair_wigs">
+                                    Comment porter une perruque
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_fem_resources.html#trans_fem_hair_wigs_recommendations">
+                                    Magasins de perruques recommandé par des femmes trans
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_fem_resources.html#trans_fem_hair_guide">
+                                    Guide pour les cheveux féminins
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_fem_resources.html#trans_fem_hair_salon">
+                                    Trouver un salon de coiffure trans-amicales
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_fem_resources.html#trans_fem_hair_loss">
+                                    Prévenir la perte de cheveux
+                                </a> 
+                            </h5>
+                        </li>
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_fem_resources.html#trans_fem_hair_removal">
+                                    Épilation
+                                </a> 
+                            </h5>
+                        </li>
+                    </ol>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_fem_resources.html#trans_fem_makeup">
+                                Maquillage
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_fem_resources.html#trans_fem_body_shape">
+                                Silhouette
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_fem_resources.html#trans_fem_bra">
+                                Soutien-gorge et poitrine
+                            </a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./trans_fem_resources.html#trans_fem_surgery">
+                                Chirurgie et subventions
+                            </a>
+                        </h4>
+                    </li>
+                    <ol type="I">
+                        <li>
+                            <h5 style="margin: 0px;">
+                                <a href="./trans_fem_resources.html#trans_fem_surgery_grants">
+                                    Subventions pour chirurgie
+                                </a> 
+                            </h5>
+                        </li>
+                    </ol>
+                </ol>
+            </li>
+            <li>
+                <h3 style="margin: 0px;">
+                    <a href="./nonbinary_and_intersex_resources.html">
+                        Ressources non-binaire et intersexe
+                    </a>
+                </h3>
+                <ol type="A">
+                    <li>
+                        <h4 style="margin: 0px;">
+                            <a href="./nonbinary_and_intersex_resources.html#nonbinary_and_intersex_general_resources">
+                                Ressources générales
+                            </a>
+                        </h4>
+                    </li>
+                    <li>[plus à venir bientôt]</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+</div>
+
+
+
+<div class="separator-foot"></div>
+
+<div class="readable-div">
+    <p style="text-align: center;">
+        Voulez-vous ajouter quelque chose de plus? <br>
+        Contacter Pongo via <code>worldwidelgbtresources@gmail.com</code> 
+        ou
+        <a href="https://cryptpad.fr/form/#/2/form/view/+1mRXu4lphjgE2YcY7UMk7CSXJ1T4ORaLSlYj5FFkLo/">
+            remplir ce formulaire
+        </a><br>
+        Difficultés techniques? <br>
+        Contacter Add sur 
+        <a href="https://discordapp.com/users/245579273052749825">
+            Discord (add_gaming)
+        </a> 
+        ou 
+        <a href="https://x.com/AddGaming2">
+            Twitter
+        </a>
+        !
+    </p>
+
+    <p class="readable-text">
+        Clause de non-responsabilité: <br>
+        Ces conseils sont basés sur notre expérience, nous ne sommes ni médecins, ni thérapeutes, ni avocats, ni experts. 
+        Les produits et entreprises nommés ne sont que des suggestions. 
+        S'il te plaît faire votre propre recherche en plus de l'information présentée. 
+        Consultez votre médecin pour toute question médicale.
+    </p>
+</div>
+
+
+</body>
